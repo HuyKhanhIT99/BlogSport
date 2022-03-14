@@ -10,5 +10,6 @@ namespace MVC.Models
 
         public long ID { get; set; }
         public string NAME { get; set; }
+        public IEnumerable<mvcCategoryModel> categorylist { get; set; }
     }
 }

@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="GlobalVariables.cs" />
     <Compile Include="Models\mvcCategoryModel.cs" />
+    <Compile Include="Models\mvcModelCustom.cs" />
     <Compile Include="Models\mvcNewModel.cs" />
     <Compile Include="Models\mvcUserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,6 +274,8 @@
     <Content Include="Views\Admin\AddOrEditCategory.cshtml" />
     <Content Include="Views\Admin\News.cshtml" />
     <Content Include="Views\Admin\AddOrEditNew.cshtml" />
+    <Content Include="Views\Home\FindNewByCategoriesID.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
