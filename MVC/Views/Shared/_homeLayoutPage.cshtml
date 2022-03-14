@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC.Models.mvcCategoryModel>
+﻿@model MVC.Models.mvcModelCustom
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,7 +100,8 @@
                     <div id="navbar" class="collapse navbar-collapse sidebar-offcanvas">
                         <ul class="nav navbar-nav">
                             <li class="hidden"><a href="#page-top"></a></li>
-                            @foreach (var item in Model)
+                            
+                            @foreach (var item in Model.mvcCategory)
                             {
                                 <li><a class="page-scroll" href="@Url.Action("FindNewByCategoriesID","Home",new {id = item.ID })">@item.NAME</a></li>
                             }

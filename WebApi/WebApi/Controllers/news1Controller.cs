@@ -12,31 +12,18 @@ using WebApi.Models;
 
 namespace WebApi.Controllers
 {
-    public class newsController : ApiController
+    public class news1Controller : ApiController
     {
         private CRUBWEBTINTUCEntities db = new CRUBWEBTINTUCEntities();
 
-        // GET: api/news
-        public IQueryable<news> Getnews()
+        // GET: api/news1
+        public IQueryable<news> Getnews(long id)
         {
-            return db.news;
+            return db.news.Where(ff=>ff.CATEGORY_ID == id);
         }
 
-        // GET: api/news/5
-        [ResponseType(typeof(news))]
-        public IHttpActionResult Getnews(long id)
-        {
-            news news = db.news.Find(id);
-            
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(news);
-        }
-
-        // PUT: api/news/5
+        // GET: api/news1/5
+                // PUT: api/news1/5
         [ResponseType(typeof(void))]
         public IHttpActionResult Putnews(long id, news news)
         {
@@ -71,7 +58,7 @@ namespace WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/news
+        // POST: api/news1
         [ResponseType(typeof(news))]
         public IHttpActionResult Postnews(news news)
         {
@@ -86,7 +73,7 @@ namespace WebApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = news.ID }, news);
         }
 
-        // DELETE: api/news/5
+        // DELETE: api/news1/5
         [ResponseType(typeof(news))]
         public IHttpActionResult Deletenews(long id)
         {
