@@ -1,0 +1,52 @@
+﻿@model MVC.Models.mvcNewModel
+@{
+    ViewBag.Title = "AddOrEditNew";
+    Layout = "~/Views/Shared/_adminLayoutPage.cshtml";
+}
+
+<h2>AddOrEditNew</h2>
+
+
+<div>
+
+    @using (Html.BeginForm(new { enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(model => model.ID)
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.NAME)
+            @Html.EditorFor(model => model.NAME)
+            @Html.ValidationMessageFor(model => model.NAME)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.DESCRIPTION)
+            @Html.EditorFor(model => model.DESCRIPTION)
+            @Html.ValidationMessageFor(model => model.DESCRIPTION)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IMAGE)
+            @Html.TextBoxFor(model => model.IMAGE, new { type = "file" })
+            @Html.ValidationMessageFor(model => model.IMAGE)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DETAIL)
+            @Html.EditorFor(Model => Model.DETAIL)
+            @Html.ValidationMessageFor(model => model.DETAIL)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CATEGORY_ID)
+            @Html.DropDownListFor(model=>model.CATEGORY_ID,Model.CategoryList)
+            @Html.ValidationMessageFor(model => model.CATEGORY_ID)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.USER_ID)
+            @Html.DropDownListFor(model => model.USER_ID, Model.UserList)
+            @Html.ValidationMessageFor(model => model.USER_ID)
+        </div>
+        <div class="form-group">
+            <input type="submit" value="submit" class="btn-default" />
+            <input type="reset" value="reset" class="btn-default" />
+        </div>
+
+    }
+
+</div>
